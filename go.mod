@@ -1,4 +1,4 @@
-module github.com/undassa/appstore-connect-api-client
+module github.com/undassa/appstoreconnect
 
 go 1.15
 
