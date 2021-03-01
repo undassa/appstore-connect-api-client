@@ -16,19 +16,20 @@ import (
 
 // AppInfoResponse struct for AppInfoResponse
 type AppInfoResponse struct {
-	Data AppInfo `json:"data"`
-	Included *[]OneOfAppInfoLocalizationAppCategoryAppCategoryAppCategoryAppCategoryAppCategoryAppCategory `json:"included,omitempty"`
-	Links DocumentLinks `json:"links"`
+	Data                 AppInfo                                `json:"data"`
+	Included             *[]OneOfAppInfoLocalizationAppCategory `json:"included,omitempty"`
+	Links                DocumentLinks                          `json:"links"`
 	AdditionalProperties map[string]interface{}
 }
 
 type _AppInfoResponse AppInfoResponse
+type OneOfAppInfoLocalizationAppCategory struct{}
 
 // NewAppInfoResponse instantiates a new AppInfoResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAppInfoResponse(data AppInfo, links DocumentLinks, ) *AppInfoResponse {
+func NewAppInfoResponse(data AppInfo, links DocumentLinks) *AppInfoResponse {
 	this := AppInfoResponse{}
 	this.Data = data
 	this.Links = links
@@ -45,7 +46,7 @@ func NewAppInfoResponseWithDefaults() *AppInfoResponse {
 
 // GetData returns the Data field value
 func (o *AppInfoResponse) GetData() AppInfo {
-	if o == nil  {
+	if o == nil {
 		var ret AppInfo
 		return ret
 	}
@@ -56,7 +57,7 @@ func (o *AppInfoResponse) GetData() AppInfo {
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
 func (o *AppInfoResponse) GetDataOk() (*AppInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Data, true
@@ -68,9 +69,9 @@ func (o *AppInfoResponse) SetData(v AppInfo) {
 }
 
 // GetIncluded returns the Included field value if set, zero value otherwise.
-func (o *AppInfoResponse) GetIncluded() []OneOfAppInfoLocalizationAppCategoryAppCategoryAppCategoryAppCategoryAppCategoryAppCategory {
+func (o *AppInfoResponse) GetIncluded() []OneOfAppInfoLocalizationAppCategory {
 	if o == nil || o.Included == nil {
-		var ret []OneOfAppInfoLocalizationAppCategoryAppCategoryAppCategoryAppCategoryAppCategoryAppCategory
+		var ret []OneOfAppInfoLocalizationAppCategory
 		return ret
 	}
 	return *o.Included
@@ -78,7 +79,7 @@ func (o *AppInfoResponse) GetIncluded() []OneOfAppInfoLocalizationAppCategoryApp
 
 // GetIncludedOk returns a tuple with the Included field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AppInfoResponse) GetIncludedOk() (*[]OneOfAppInfoLocalizationAppCategoryAppCategoryAppCategoryAppCategoryAppCategoryAppCategory, bool) {
+func (o *AppInfoResponse) GetIncludedOk() (*[]OneOfAppInfoLocalizationAppCategory, bool) {
 	if o == nil || o.Included == nil {
 		return nil, false
 	}
@@ -94,14 +95,14 @@ func (o *AppInfoResponse) HasIncluded() bool {
 	return false
 }
 
-// SetIncluded gets a reference to the given []OneOfAppInfoLocalizationAppCategoryAppCategoryAppCategoryAppCategoryAppCategoryAppCategory and assigns it to the Included field.
-func (o *AppInfoResponse) SetIncluded(v []OneOfAppInfoLocalizationAppCategoryAppCategoryAppCategoryAppCategoryAppCategoryAppCategory) {
+// SetIncluded gets a reference to the given []OneOfAppInfoLocalizationAppCategory and assigns it to the Included field.
+func (o *AppInfoResponse) SetIncluded(v []OneOfAppInfoLocalizationAppCategory) {
 	o.Included = &v
 }
 
 // GetLinks returns the Links field value
 func (o *AppInfoResponse) GetLinks() DocumentLinks {
-	if o == nil  {
+	if o == nil {
 		var ret DocumentLinks
 		return ret
 	}
@@ -112,7 +113,7 @@ func (o *AppInfoResponse) GetLinks() DocumentLinks {
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
 func (o *AppInfoResponse) GetLinksOk() (*DocumentLinks, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Links, true
@@ -196,5 +197,3 @@ func (v *NullableAppInfoResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

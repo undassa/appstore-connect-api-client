@@ -16,19 +16,24 @@ import (
 
 // ProfileResponse struct for ProfileResponse
 type ProfileResponse struct {
-	Data Profile `json:"data"`
-	Included *[]OneOfBundleIdDeviceCertificate `json:"included,omitempty"`
-	Links DocumentLinks `json:"links"`
+	Data                 Profile        `json:"data"`
+	Included             *[]OneOfBundle `json:"included,omitempty"`
+	Links                DocumentLinks  `json:"links"`
 	AdditionalProperties map[string]interface{}
 }
 
 type _ProfileResponse ProfileResponse
+type OneOfBundle struct {
+	Id          string
+	Device      string
+	Certificate string
+}
 
 // NewProfileResponse instantiates a new ProfileResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewProfileResponse(data Profile, links DocumentLinks, ) *ProfileResponse {
+func NewProfileResponse(data Profile, links DocumentLinks) *ProfileResponse {
 	this := ProfileResponse{}
 	this.Data = data
 	this.Links = links
@@ -45,7 +50,7 @@ func NewProfileResponseWithDefaults() *ProfileResponse {
 
 // GetData returns the Data field value
 func (o *ProfileResponse) GetData() Profile {
-	if o == nil  {
+	if o == nil {
 		var ret Profile
 		return ret
 	}
@@ -56,7 +61,7 @@ func (o *ProfileResponse) GetData() Profile {
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
 func (o *ProfileResponse) GetDataOk() (*Profile, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Data, true
@@ -68,9 +73,9 @@ func (o *ProfileResponse) SetData(v Profile) {
 }
 
 // GetIncluded returns the Included field value if set, zero value otherwise.
-func (o *ProfileResponse) GetIncluded() []OneOfBundleIdDeviceCertificate {
+func (o *ProfileResponse) GetIncluded() []OneOfBundle {
 	if o == nil || o.Included == nil {
-		var ret []OneOfBundleIdDeviceCertificate
+		var ret []OneOfBundle
 		return ret
 	}
 	return *o.Included
@@ -78,7 +83,7 @@ func (o *ProfileResponse) GetIncluded() []OneOfBundleIdDeviceCertificate {
 
 // GetIncludedOk returns a tuple with the Included field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProfileResponse) GetIncludedOk() (*[]OneOfBundleIdDeviceCertificate, bool) {
+func (o *ProfileResponse) GetIncludedOk() (*[]OneOfBundle, bool) {
 	if o == nil || o.Included == nil {
 		return nil, false
 	}
@@ -94,14 +99,14 @@ func (o *ProfileResponse) HasIncluded() bool {
 	return false
 }
 
-// SetIncluded gets a reference to the given []OneOfBundleIdDeviceCertificate and assigns it to the Included field.
-func (o *ProfileResponse) SetIncluded(v []OneOfBundleIdDeviceCertificate) {
+// SetIncluded gets a reference to the given []OneOfBundleand assigns it to the Included field.
+func (o *ProfileResponse) SetIncluded(v []OneOfBundle) {
 	o.Included = &v
 }
 
 // GetLinks returns the Links field value
 func (o *ProfileResponse) GetLinks() DocumentLinks {
-	if o == nil  {
+	if o == nil {
 		var ret DocumentLinks
 		return ret
 	}
@@ -112,7 +117,7 @@ func (o *ProfileResponse) GetLinks() DocumentLinks {
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
 func (o *ProfileResponse) GetLinksOk() (*DocumentLinks, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Links, true
@@ -196,5 +201,3 @@ func (v *NullableProfileResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

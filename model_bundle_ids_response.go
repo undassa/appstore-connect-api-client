@@ -16,10 +16,10 @@ import (
 
 // BundleIdsResponse struct for BundleIdsResponse
 type BundleIdsResponse struct {
-	Data []BundleId `json:"data"`
-	Included *[]OneOfProfileBundleIdCapabilityApp `json:"included,omitempty"`
-	Links PagedDocumentLinks `json:"links"`
-	Meta *PagingInformation `json:"meta,omitempty"`
+	Data                 []BundleId            `json:"data"`
+	Included             *[]OneOfProfileBundle `json:"included,omitempty"`
+	Links                PagedDocumentLinks    `json:"links"`
+	Meta                 *PagingInformation    `json:"meta,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -29,7 +29,7 @@ type _BundleIdsResponse BundleIdsResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBundleIdsResponse(data []BundleId, links PagedDocumentLinks, ) *BundleIdsResponse {
+func NewBundleIdsResponse(data []BundleId, links PagedDocumentLinks) *BundleIdsResponse {
 	this := BundleIdsResponse{}
 	this.Data = data
 	this.Links = links
@@ -46,7 +46,7 @@ func NewBundleIdsResponseWithDefaults() *BundleIdsResponse {
 
 // GetData returns the Data field value
 func (o *BundleIdsResponse) GetData() []BundleId {
-	if o == nil  {
+	if o == nil {
 		var ret []BundleId
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *BundleIdsResponse) GetData() []BundleId {
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
 func (o *BundleIdsResponse) GetDataOk() (*[]BundleId, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Data, true
@@ -69,9 +69,9 @@ func (o *BundleIdsResponse) SetData(v []BundleId) {
 }
 
 // GetIncluded returns the Included field value if set, zero value otherwise.
-func (o *BundleIdsResponse) GetIncluded() []OneOfProfileBundleIdCapabilityApp {
+func (o *BundleIdsResponse) GetIncluded() []OneOfProfileBundle {
 	if o == nil || o.Included == nil {
-		var ret []OneOfProfileBundleIdCapabilityApp
+		var ret []OneOfProfileBundle
 		return ret
 	}
 	return *o.Included
@@ -79,7 +79,7 @@ func (o *BundleIdsResponse) GetIncluded() []OneOfProfileBundleIdCapabilityApp {
 
 // GetIncludedOk returns a tuple with the Included field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BundleIdsResponse) GetIncludedOk() (*[]OneOfProfileBundleIdCapabilityApp, bool) {
+func (o *BundleIdsResponse) GetIncludedOk() (*[]OneOfProfileBundle, bool) {
 	if o == nil || o.Included == nil {
 		return nil, false
 	}
@@ -95,14 +95,14 @@ func (o *BundleIdsResponse) HasIncluded() bool {
 	return false
 }
 
-// SetIncluded gets a reference to the given []OneOfProfileBundleIdCapabilityApp and assigns it to the Included field.
-func (o *BundleIdsResponse) SetIncluded(v []OneOfProfileBundleIdCapabilityApp) {
+// SetIncluded gets a reference to the given []OneOfProfileBundle and assigns it to the Included field.
+func (o *BundleIdsResponse) SetIncluded(v []OneOfProfileBundle) {
 	o.Included = &v
 }
 
 // GetLinks returns the Links field value
 func (o *BundleIdsResponse) GetLinks() PagedDocumentLinks {
-	if o == nil  {
+	if o == nil {
 		var ret PagedDocumentLinks
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *BundleIdsResponse) GetLinks() PagedDocumentLinks {
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
 func (o *BundleIdsResponse) GetLinksOk() (*PagedDocumentLinks, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Links, true
@@ -233,5 +233,3 @@ func (v *NullableBundleIdsResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

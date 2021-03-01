@@ -16,10 +16,10 @@ import (
 
 // AppStoreVersionLocalizationsResponse struct for AppStoreVersionLocalizationsResponse
 type AppStoreVersionLocalizationsResponse struct {
-	Data []AppStoreVersionLocalization `json:"data"`
-	Included *[]OneOfAppScreenshotSetAppPreviewSet `json:"included,omitempty"`
-	Links PagedDocumentLinks `json:"links"`
-	Meta *PagingInformation `json:"meta,omitempty"`
+	Data                 []AppStoreVersionLocalization `json:"data"`
+	Included             *[]OneOfAppScreenshot         `json:"included,omitempty"`
+	Links                PagedDocumentLinks            `json:"links"`
+	Meta                 *PagingInformation            `json:"meta,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -29,7 +29,7 @@ type _AppStoreVersionLocalizationsResponse AppStoreVersionLocalizationsResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAppStoreVersionLocalizationsResponse(data []AppStoreVersionLocalization, links PagedDocumentLinks, ) *AppStoreVersionLocalizationsResponse {
+func NewAppStoreVersionLocalizationsResponse(data []AppStoreVersionLocalization, links PagedDocumentLinks) *AppStoreVersionLocalizationsResponse {
 	this := AppStoreVersionLocalizationsResponse{}
 	this.Data = data
 	this.Links = links
@@ -46,7 +46,7 @@ func NewAppStoreVersionLocalizationsResponseWithDefaults() *AppStoreVersionLocal
 
 // GetData returns the Data field value
 func (o *AppStoreVersionLocalizationsResponse) GetData() []AppStoreVersionLocalization {
-	if o == nil  {
+	if o == nil {
 		var ret []AppStoreVersionLocalization
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *AppStoreVersionLocalizationsResponse) GetData() []AppStoreVersionLocali
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
 func (o *AppStoreVersionLocalizationsResponse) GetDataOk() (*[]AppStoreVersionLocalization, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Data, true
@@ -69,9 +69,9 @@ func (o *AppStoreVersionLocalizationsResponse) SetData(v []AppStoreVersionLocali
 }
 
 // GetIncluded returns the Included field value if set, zero value otherwise.
-func (o *AppStoreVersionLocalizationsResponse) GetIncluded() []OneOfAppScreenshotSetAppPreviewSet {
+func (o *AppStoreVersionLocalizationsResponse) GetIncluded() []OneOfAppScreenshot {
 	if o == nil || o.Included == nil {
-		var ret []OneOfAppScreenshotSetAppPreviewSet
+		var ret []OneOfAppScreenshot
 		return ret
 	}
 	return *o.Included
@@ -79,7 +79,7 @@ func (o *AppStoreVersionLocalizationsResponse) GetIncluded() []OneOfAppScreensho
 
 // GetIncludedOk returns a tuple with the Included field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AppStoreVersionLocalizationsResponse) GetIncludedOk() (*[]OneOfAppScreenshotSetAppPreviewSet, bool) {
+func (o *AppStoreVersionLocalizationsResponse) GetIncludedOk() (*[]OneOfAppScreenshot, bool) {
 	if o == nil || o.Included == nil {
 		return nil, false
 	}
@@ -95,14 +95,14 @@ func (o *AppStoreVersionLocalizationsResponse) HasIncluded() bool {
 	return false
 }
 
-// SetIncluded gets a reference to the given []OneOfAppScreenshotSetAppPreviewSet and assigns it to the Included field.
-func (o *AppStoreVersionLocalizationsResponse) SetIncluded(v []OneOfAppScreenshotSetAppPreviewSet) {
+// SetIncluded gets a reference to the given []OneOfAppScreenshot and assigns it to the Included field.
+func (o *AppStoreVersionLocalizationsResponse) SetIncluded(v []OneOfAppScreenshot) {
 	o.Included = &v
 }
 
 // GetLinks returns the Links field value
 func (o *AppStoreVersionLocalizationsResponse) GetLinks() PagedDocumentLinks {
-	if o == nil  {
+	if o == nil {
 		var ret PagedDocumentLinks
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *AppStoreVersionLocalizationsResponse) GetLinks() PagedDocumentLinks {
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
 func (o *AppStoreVersionLocalizationsResponse) GetLinksOk() (*PagedDocumentLinks, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Links, true
@@ -233,5 +233,3 @@ func (v *NullableAppStoreVersionLocalizationsResponse) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

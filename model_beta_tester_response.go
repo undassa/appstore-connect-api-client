@@ -16,19 +16,20 @@ import (
 
 // BetaTesterResponse struct for BetaTesterResponse
 type BetaTesterResponse struct {
-	Data BetaTester `json:"data"`
-	Included *[]OneOfAppBetaGroupBuild `json:"included,omitempty"`
-	Links DocumentLinks `json:"links"`
+	Data                 BetaTester                `json:"data"`
+	Included             *[]OneOfAppBetaGroupBuild `json:"included,omitempty"`
+	Links                DocumentLinks             `json:"links"`
 	AdditionalProperties map[string]interface{}
 }
 
 type _BetaTesterResponse BetaTesterResponse
+type OneOfAppBetaGroupBuild struct{}
 
 // NewBetaTesterResponse instantiates a new BetaTesterResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBetaTesterResponse(data BetaTester, links DocumentLinks, ) *BetaTesterResponse {
+func NewBetaTesterResponse(data BetaTester, links DocumentLinks) *BetaTesterResponse {
 	this := BetaTesterResponse{}
 	this.Data = data
 	this.Links = links
@@ -45,7 +46,7 @@ func NewBetaTesterResponseWithDefaults() *BetaTesterResponse {
 
 // GetData returns the Data field value
 func (o *BetaTesterResponse) GetData() BetaTester {
-	if o == nil  {
+	if o == nil {
 		var ret BetaTester
 		return ret
 	}
@@ -56,7 +57,7 @@ func (o *BetaTesterResponse) GetData() BetaTester {
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
 func (o *BetaTesterResponse) GetDataOk() (*BetaTester, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Data, true
@@ -101,7 +102,7 @@ func (o *BetaTesterResponse) SetIncluded(v []OneOfAppBetaGroupBuild) {
 
 // GetLinks returns the Links field value
 func (o *BetaTesterResponse) GetLinks() DocumentLinks {
-	if o == nil  {
+	if o == nil {
 		var ret DocumentLinks
 		return ret
 	}
@@ -112,7 +113,7 @@ func (o *BetaTesterResponse) GetLinks() DocumentLinks {
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
 func (o *BetaTesterResponse) GetLinksOk() (*DocumentLinks, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Links, true
@@ -196,5 +197,3 @@ func (v *NullableBetaTesterResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

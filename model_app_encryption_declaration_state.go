@@ -20,11 +20,7 @@ type AppEncryptionDeclarationState string
 
 // List of AppEncryptionDeclarationState
 const (
-	IN_REVIEW AppEncryptionDeclarationState = "IN_REVIEW"
-	APPROVED AppEncryptionDeclarationState = "APPROVED"
-	REJECTED AppEncryptionDeclarationState = "REJECTED"
 	INVALID AppEncryptionDeclarationState = "INVALID"
-	EXPIRED AppEncryptionDeclarationState = "EXPIRED"
 )
 
 func (v *AppEncryptionDeclarationState) UnmarshalJSON(src []byte) error {
@@ -34,7 +30,7 @@ func (v *AppEncryptionDeclarationState) UnmarshalJSON(src []byte) error {
 		return err
 	}
 	enumTypeValue := AppEncryptionDeclarationState(value)
-	for _, existing := range []AppEncryptionDeclarationState{ "IN_REVIEW", "APPROVED", "REJECTED", "INVALID", "EXPIRED",   } {
+	for _, existing := range []AppEncryptionDeclarationState{"IN_REVIEW", "APPROVED", "REJECTED", "INVALID", "EXPIRED"} {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
@@ -84,4 +80,3 @@ func (v *NullableAppEncryptionDeclarationState) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

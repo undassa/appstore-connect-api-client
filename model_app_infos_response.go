@@ -16,10 +16,10 @@ import (
 
 // AppInfosResponse struct for AppInfosResponse
 type AppInfosResponse struct {
-	Data []AppInfo `json:"data"`
-	Included *[]OneOfAppInfoLocalizationAppCategoryAppCategoryAppCategoryAppCategoryAppCategoryAppCategory `json:"included,omitempty"`
-	Links PagedDocumentLinks `json:"links"`
-	Meta *PagingInformation `json:"meta,omitempty"`
+	Data                 []AppInfo                              `json:"data"`
+	Included             *[]OneOfAppInfoLocalizationAppCategory `json:"included,omitempty"`
+	Links                PagedDocumentLinks                     `json:"links"`
+	Meta                 *PagingInformation                     `json:"meta,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -29,7 +29,7 @@ type _AppInfosResponse AppInfosResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAppInfosResponse(data []AppInfo, links PagedDocumentLinks, ) *AppInfosResponse {
+func NewAppInfosResponse(data []AppInfo, links PagedDocumentLinks) *AppInfosResponse {
 	this := AppInfosResponse{}
 	this.Data = data
 	this.Links = links
@@ -46,7 +46,7 @@ func NewAppInfosResponseWithDefaults() *AppInfosResponse {
 
 // GetData returns the Data field value
 func (o *AppInfosResponse) GetData() []AppInfo {
-	if o == nil  {
+	if o == nil {
 		var ret []AppInfo
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *AppInfosResponse) GetData() []AppInfo {
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
 func (o *AppInfosResponse) GetDataOk() (*[]AppInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Data, true
@@ -69,9 +69,9 @@ func (o *AppInfosResponse) SetData(v []AppInfo) {
 }
 
 // GetIncluded returns the Included field value if set, zero value otherwise.
-func (o *AppInfosResponse) GetIncluded() []OneOfAppInfoLocalizationAppCategoryAppCategoryAppCategoryAppCategoryAppCategoryAppCategory {
+func (o *AppInfosResponse) GetIncluded() []OneOfAppInfoLocalizationAppCategory {
 	if o == nil || o.Included == nil {
-		var ret []OneOfAppInfoLocalizationAppCategoryAppCategoryAppCategoryAppCategoryAppCategoryAppCategory
+		var ret []OneOfAppInfoLocalizationAppCategory
 		return ret
 	}
 	return *o.Included
@@ -79,7 +79,7 @@ func (o *AppInfosResponse) GetIncluded() []OneOfAppInfoLocalizationAppCategoryAp
 
 // GetIncludedOk returns a tuple with the Included field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AppInfosResponse) GetIncludedOk() (*[]OneOfAppInfoLocalizationAppCategoryAppCategoryAppCategoryAppCategoryAppCategoryAppCategory, bool) {
+func (o *AppInfosResponse) GetIncludedOk() (*[]OneOfAppInfoLocalizationAppCategory, bool) {
 	if o == nil || o.Included == nil {
 		return nil, false
 	}
@@ -95,14 +95,14 @@ func (o *AppInfosResponse) HasIncluded() bool {
 	return false
 }
 
-// SetIncluded gets a reference to the given []OneOfAppInfoLocalizationAppCategoryAppCategoryAppCategoryAppCategoryAppCategoryAppCategory and assigns it to the Included field.
-func (o *AppInfosResponse) SetIncluded(v []OneOfAppInfoLocalizationAppCategoryAppCategoryAppCategoryAppCategoryAppCategoryAppCategory) {
+// SetIncluded gets a reference to the given []OneOfAppInfoLocalizationAppCategory and assigns it to the Included field.
+func (o *AppInfosResponse) SetIncluded(v []OneOfAppInfoLocalizationAppCategory) {
 	o.Included = &v
 }
 
 // GetLinks returns the Links field value
 func (o *AppInfosResponse) GetLinks() PagedDocumentLinks {
-	if o == nil  {
+	if o == nil {
 		var ret PagedDocumentLinks
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *AppInfosResponse) GetLinks() PagedDocumentLinks {
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
 func (o *AppInfosResponse) GetLinksOk() (*PagedDocumentLinks, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Links, true
@@ -233,5 +233,3 @@ func (v *NullableAppInfosResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

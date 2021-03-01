@@ -16,19 +16,20 @@ import (
 
 // BetaGroupResponse struct for BetaGroupResponse
 type BetaGroupResponse struct {
-	Data BetaGroup `json:"data"`
-	Included *[]OneOfAppBuildBetaTester `json:"included,omitempty"`
-	Links DocumentLinks `json:"links"`
+	Data                 BetaGroup                  `json:"data"`
+	Included             *[]OneOfAppBuildBetaTester `json:"included,omitempty"`
+	Links                DocumentLinks              `json:"links"`
 	AdditionalProperties map[string]interface{}
 }
 
 type _BetaGroupResponse BetaGroupResponse
+type OneOfAppBuildBetaTester struct{}
 
 // NewBetaGroupResponse instantiates a new BetaGroupResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBetaGroupResponse(data BetaGroup, links DocumentLinks, ) *BetaGroupResponse {
+func NewBetaGroupResponse(data BetaGroup, links DocumentLinks) *BetaGroupResponse {
 	this := BetaGroupResponse{}
 	this.Data = data
 	this.Links = links
@@ -45,7 +46,7 @@ func NewBetaGroupResponseWithDefaults() *BetaGroupResponse {
 
 // GetData returns the Data field value
 func (o *BetaGroupResponse) GetData() BetaGroup {
-	if o == nil  {
+	if o == nil {
 		var ret BetaGroup
 		return ret
 	}
@@ -56,7 +57,7 @@ func (o *BetaGroupResponse) GetData() BetaGroup {
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
 func (o *BetaGroupResponse) GetDataOk() (*BetaGroup, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Data, true
@@ -101,7 +102,7 @@ func (o *BetaGroupResponse) SetIncluded(v []OneOfAppBuildBetaTester) {
 
 // GetLinks returns the Links field value
 func (o *BetaGroupResponse) GetLinks() DocumentLinks {
-	if o == nil  {
+	if o == nil {
 		var ret DocumentLinks
 		return ret
 	}
@@ -112,7 +113,7 @@ func (o *BetaGroupResponse) GetLinks() DocumentLinks {
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
 func (o *BetaGroupResponse) GetLinksOk() (*DocumentLinks, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Links, true
@@ -196,5 +197,3 @@ func (v *NullableBetaGroupResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

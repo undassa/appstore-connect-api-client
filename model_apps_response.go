@@ -16,10 +16,10 @@ import (
 
 // AppsResponse struct for AppsResponse
 type AppsResponse struct {
-	Data []App `json:"data"`
-	Included *[]OneOfBetaGroupAppStoreVersionPrereleaseVersionBetaAppLocalizationBuildBetaLicenseAgreementBetaAppReviewDetailAppInfoEndUserLicenseAgreementAppPreOrderAppPriceTerritoryInAppPurchaseGameCenterEnabledVersionPerfPowerMetric `json:"included,omitempty"`
-	Links PagedDocumentLinks `json:"links"`
-	Meta *PagingInformation `json:"meta,omitempty"`
+	Data                 []App              `json:"data"`
+	Included             *[]OneOfBetaGroup  `json:"included,omitempty"`
+	Links                PagedDocumentLinks `json:"links"`
+	Meta                 *PagingInformation `json:"meta,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -29,7 +29,7 @@ type _AppsResponse AppsResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAppsResponse(data []App, links PagedDocumentLinks, ) *AppsResponse {
+func NewAppsResponse(data []App, links PagedDocumentLinks) *AppsResponse {
 	this := AppsResponse{}
 	this.Data = data
 	this.Links = links
@@ -46,7 +46,7 @@ func NewAppsResponseWithDefaults() *AppsResponse {
 
 // GetData returns the Data field value
 func (o *AppsResponse) GetData() []App {
-	if o == nil  {
+	if o == nil {
 		var ret []App
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *AppsResponse) GetData() []App {
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
 func (o *AppsResponse) GetDataOk() (*[]App, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Data, true
@@ -69,9 +69,9 @@ func (o *AppsResponse) SetData(v []App) {
 }
 
 // GetIncluded returns the Included field value if set, zero value otherwise.
-func (o *AppsResponse) GetIncluded() []OneOfBetaGroupAppStoreVersionPrereleaseVersionBetaAppLocalizationBuildBetaLicenseAgreementBetaAppReviewDetailAppInfoEndUserLicenseAgreementAppPreOrderAppPriceTerritoryInAppPurchaseGameCenterEnabledVersionPerfPowerMetric {
+func (o *AppsResponse) GetIncluded() []OneOfBetaGroup {
 	if o == nil || o.Included == nil {
-		var ret []OneOfBetaGroupAppStoreVersionPrereleaseVersionBetaAppLocalizationBuildBetaLicenseAgreementBetaAppReviewDetailAppInfoEndUserLicenseAgreementAppPreOrderAppPriceTerritoryInAppPurchaseGameCenterEnabledVersionPerfPowerMetric
+		var ret []OneOfBetaGroup
 		return ret
 	}
 	return *o.Included
@@ -79,7 +79,7 @@ func (o *AppsResponse) GetIncluded() []OneOfBetaGroupAppStoreVersionPrereleaseVe
 
 // GetIncludedOk returns a tuple with the Included field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AppsResponse) GetIncludedOk() (*[]OneOfBetaGroupAppStoreVersionPrereleaseVersionBetaAppLocalizationBuildBetaLicenseAgreementBetaAppReviewDetailAppInfoEndUserLicenseAgreementAppPreOrderAppPriceTerritoryInAppPurchaseGameCenterEnabledVersionPerfPowerMetric, bool) {
+func (o *AppsResponse) GetIncludedOk() (*[]OneOfBetaGroup, bool) {
 	if o == nil || o.Included == nil {
 		return nil, false
 	}
@@ -95,14 +95,14 @@ func (o *AppsResponse) HasIncluded() bool {
 	return false
 }
 
-// SetIncluded gets a reference to the given []OneOfBetaGroupAppStoreVersionPrereleaseVersionBetaAppLocalizationBuildBetaLicenseAgreementBetaAppReviewDetailAppInfoEndUserLicenseAgreementAppPreOrderAppPriceTerritoryInAppPurchaseGameCenterEnabledVersionPerfPowerMetric and assigns it to the Included field.
-func (o *AppsResponse) SetIncluded(v []OneOfBetaGroupAppStoreVersionPrereleaseVersionBetaAppLocalizationBuildBetaLicenseAgreementBetaAppReviewDetailAppInfoEndUserLicenseAgreementAppPreOrderAppPriceTerritoryInAppPurchaseGameCenterEnabledVersionPerfPowerMetric) {
+// SetIncluded gets a reference to the given []OneOfBetaGroup and assigns it to the Included field.
+func (o *AppsResponse) SetIncluded(v []OneOfBetaGroup) {
 	o.Included = &v
 }
 
 // GetLinks returns the Links field value
 func (o *AppsResponse) GetLinks() PagedDocumentLinks {
-	if o == nil  {
+	if o == nil {
 		var ret PagedDocumentLinks
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *AppsResponse) GetLinks() PagedDocumentLinks {
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
 func (o *AppsResponse) GetLinksOk() (*PagedDocumentLinks, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Links, true
@@ -233,5 +233,3 @@ func (v *NullableAppsResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

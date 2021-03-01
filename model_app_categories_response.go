@@ -16,20 +16,21 @@ import (
 
 // AppCategoriesResponse struct for AppCategoriesResponse
 type AppCategoriesResponse struct {
-	Data []AppCategory `json:"data"`
-	Included *[]OneOfAppCategoryAppCategory `json:"included,omitempty"`
-	Links PagedDocumentLinks `json:"links"`
-	Meta *PagingInformation `json:"meta,omitempty"`
+	Data                 []AppCategory                  `json:"data"`
+	Included             *[]OneOfAppCategoryAppCategory `json:"included,omitempty"`
+	Links                PagedDocumentLinks             `json:"links"`
+	Meta                 *PagingInformation             `json:"meta,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
 type _AppCategoriesResponse AppCategoriesResponse
+type OneOfAppCategoryAppCategory struct{}
 
 // NewAppCategoriesResponse instantiates a new AppCategoriesResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAppCategoriesResponse(data []AppCategory, links PagedDocumentLinks, ) *AppCategoriesResponse {
+func NewAppCategoriesResponse(data []AppCategory, links PagedDocumentLinks) *AppCategoriesResponse {
 	this := AppCategoriesResponse{}
 	this.Data = data
 	this.Links = links
@@ -46,7 +47,7 @@ func NewAppCategoriesResponseWithDefaults() *AppCategoriesResponse {
 
 // GetData returns the Data field value
 func (o *AppCategoriesResponse) GetData() []AppCategory {
-	if o == nil  {
+	if o == nil {
 		var ret []AppCategory
 		return ret
 	}
@@ -57,7 +58,7 @@ func (o *AppCategoriesResponse) GetData() []AppCategory {
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
 func (o *AppCategoriesResponse) GetDataOk() (*[]AppCategory, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Data, true
@@ -102,7 +103,7 @@ func (o *AppCategoriesResponse) SetIncluded(v []OneOfAppCategoryAppCategory) {
 
 // GetLinks returns the Links field value
 func (o *AppCategoriesResponse) GetLinks() PagedDocumentLinks {
-	if o == nil  {
+	if o == nil {
 		var ret PagedDocumentLinks
 		return ret
 	}
@@ -113,7 +114,7 @@ func (o *AppCategoriesResponse) GetLinks() PagedDocumentLinks {
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
 func (o *AppCategoriesResponse) GetLinksOk() (*PagedDocumentLinks, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Links, true
@@ -233,5 +234,3 @@ func (v *NullableAppCategoriesResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

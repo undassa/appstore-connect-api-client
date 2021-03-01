@@ -16,22 +16,23 @@ import (
 
 // ErrorResponseErrors struct for ErrorResponseErrors
 type ErrorResponseErrors struct {
-	Id *string `json:"id,omitempty"`
-	Status string `json:"status"`
-	Code string `json:"code"`
-	Title string `json:"title"`
-	Detail string `json:"detail"`
-	Source *OneOfobjectobject `json:"source,omitempty"`
+	Id                   *string            `json:"id,omitempty"`
+	Status               string             `json:"status"`
+	Code                 string             `json:"code"`
+	Title                string             `json:"title"`
+	Detail               string             `json:"detail"`
+	Source               *OneOfobjectobject `json:"source,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
 type _ErrorResponseErrors ErrorResponseErrors
+type OneOfobjectobject struct{}
 
 // NewErrorResponseErrors instantiates a new ErrorResponseErrors object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewErrorResponseErrors(status string, code string, title string, detail string, ) *ErrorResponseErrors {
+func NewErrorResponseErrors(status string, code string, title string, detail string) *ErrorResponseErrors {
 	this := ErrorResponseErrors{}
 	this.Status = status
 	this.Code = code
@@ -82,7 +83,7 @@ func (o *ErrorResponseErrors) SetId(v string) {
 
 // GetStatus returns the Status field value
 func (o *ErrorResponseErrors) GetStatus() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -93,7 +94,7 @@ func (o *ErrorResponseErrors) GetStatus() string {
 // GetStatusOk returns a tuple with the Status field value
 // and a boolean to check if the value has been set.
 func (o *ErrorResponseErrors) GetStatusOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Status, true
@@ -106,7 +107,7 @@ func (o *ErrorResponseErrors) SetStatus(v string) {
 
 // GetCode returns the Code field value
 func (o *ErrorResponseErrors) GetCode() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -117,7 +118,7 @@ func (o *ErrorResponseErrors) GetCode() string {
 // GetCodeOk returns a tuple with the Code field value
 // and a boolean to check if the value has been set.
 func (o *ErrorResponseErrors) GetCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Code, true
@@ -130,7 +131,7 @@ func (o *ErrorResponseErrors) SetCode(v string) {
 
 // GetTitle returns the Title field value
 func (o *ErrorResponseErrors) GetTitle() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -141,7 +142,7 @@ func (o *ErrorResponseErrors) GetTitle() string {
 // GetTitleOk returns a tuple with the Title field value
 // and a boolean to check if the value has been set.
 func (o *ErrorResponseErrors) GetTitleOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Title, true
@@ -154,7 +155,7 @@ func (o *ErrorResponseErrors) SetTitle(v string) {
 
 // GetDetail returns the Detail field value
 func (o *ErrorResponseErrors) GetDetail() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -165,7 +166,7 @@ func (o *ErrorResponseErrors) GetDetail() string {
 // GetDetailOk returns a tuple with the Detail field value
 // and a boolean to check if the value has been set.
 func (o *ErrorResponseErrors) GetDetailOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Detail, true
@@ -293,5 +294,3 @@ func (v *NullableErrorResponseErrors) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

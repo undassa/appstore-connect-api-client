@@ -16,10 +16,10 @@ import (
 
 // AppStoreVersionsResponse struct for AppStoreVersionsResponse
 type AppStoreVersionsResponse struct {
-	Data []AppStoreVersion `json:"data"`
-	Included *[]OneOfAgeRatingDeclarationAppStoreVersionLocalizationBuildAppStoreVersionPhasedReleaseRoutingAppCoverageAppStoreReviewDetailAppStoreVersionSubmissionIdfaDeclaration `json:"included,omitempty"`
-	Links PagedDocumentLinks `json:"links"`
-	Meta *PagingInformation `json:"meta,omitempty"`
+	Data                 []AppStoreVersion            `json:"data"`
+	Included             *[]OneOfAgeRatingDeclaration `json:"included,omitempty"`
+	Links                PagedDocumentLinks           `json:"links"`
+	Meta                 *PagingInformation           `json:"meta,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -29,7 +29,7 @@ type _AppStoreVersionsResponse AppStoreVersionsResponse
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAppStoreVersionsResponse(data []AppStoreVersion, links PagedDocumentLinks, ) *AppStoreVersionsResponse {
+func NewAppStoreVersionsResponse(data []AppStoreVersion, links PagedDocumentLinks) *AppStoreVersionsResponse {
 	this := AppStoreVersionsResponse{}
 	this.Data = data
 	this.Links = links
@@ -46,7 +46,7 @@ func NewAppStoreVersionsResponseWithDefaults() *AppStoreVersionsResponse {
 
 // GetData returns the Data field value
 func (o *AppStoreVersionsResponse) GetData() []AppStoreVersion {
-	if o == nil  {
+	if o == nil {
 		var ret []AppStoreVersion
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *AppStoreVersionsResponse) GetData() []AppStoreVersion {
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
 func (o *AppStoreVersionsResponse) GetDataOk() (*[]AppStoreVersion, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Data, true
@@ -69,9 +69,9 @@ func (o *AppStoreVersionsResponse) SetData(v []AppStoreVersion) {
 }
 
 // GetIncluded returns the Included field value if set, zero value otherwise.
-func (o *AppStoreVersionsResponse) GetIncluded() []OneOfAgeRatingDeclarationAppStoreVersionLocalizationBuildAppStoreVersionPhasedReleaseRoutingAppCoverageAppStoreReviewDetailAppStoreVersionSubmissionIdfaDeclaration {
+func (o *AppStoreVersionsResponse) GetIncluded() []OneOfAgeRatingDeclaration {
 	if o == nil || o.Included == nil {
-		var ret []OneOfAgeRatingDeclarationAppStoreVersionLocalizationBuildAppStoreVersionPhasedReleaseRoutingAppCoverageAppStoreReviewDetailAppStoreVersionSubmissionIdfaDeclaration
+		var ret []OneOfAgeRatingDeclaration
 		return ret
 	}
 	return *o.Included
@@ -79,7 +79,7 @@ func (o *AppStoreVersionsResponse) GetIncluded() []OneOfAgeRatingDeclarationAppS
 
 // GetIncludedOk returns a tuple with the Included field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AppStoreVersionsResponse) GetIncludedOk() (*[]OneOfAgeRatingDeclarationAppStoreVersionLocalizationBuildAppStoreVersionPhasedReleaseRoutingAppCoverageAppStoreReviewDetailAppStoreVersionSubmissionIdfaDeclaration, bool) {
+func (o *AppStoreVersionsResponse) GetIncludedOk() (*[]OneOfAgeRatingDeclaration, bool) {
 	if o == nil || o.Included == nil {
 		return nil, false
 	}
@@ -95,14 +95,14 @@ func (o *AppStoreVersionsResponse) HasIncluded() bool {
 	return false
 }
 
-// SetIncluded gets a reference to the given []OneOfAgeRatingDeclarationAppStoreVersionLocalizationBuildAppStoreVersionPhasedReleaseRoutingAppCoverageAppStoreReviewDetailAppStoreVersionSubmissionIdfaDeclaration and assigns it to the Included field.
-func (o *AppStoreVersionsResponse) SetIncluded(v []OneOfAgeRatingDeclarationAppStoreVersionLocalizationBuildAppStoreVersionPhasedReleaseRoutingAppCoverageAppStoreReviewDetailAppStoreVersionSubmissionIdfaDeclaration) {
+// SetIncluded gets a reference to the given []OneOfAgeRatingDeclaration and assigns it to the Included field.
+func (o *AppStoreVersionsResponse) SetIncluded(v []OneOfAgeRatingDeclaration) {
 	o.Included = &v
 }
 
 // GetLinks returns the Links field value
 func (o *AppStoreVersionsResponse) GetLinks() PagedDocumentLinks {
-	if o == nil  {
+	if o == nil {
 		var ret PagedDocumentLinks
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *AppStoreVersionsResponse) GetLinks() PagedDocumentLinks {
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
 func (o *AppStoreVersionsResponse) GetLinksOk() (*PagedDocumentLinks, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Links, true
@@ -233,5 +233,3 @@ func (v *NullableAppStoreVersionsResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

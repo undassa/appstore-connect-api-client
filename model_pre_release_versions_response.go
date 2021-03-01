@@ -16,20 +16,21 @@ import (
 
 // PreReleaseVersionsResponse struct for PreReleaseVersionsResponse
 type PreReleaseVersionsResponse struct {
-	Data []PrereleaseVersion `json:"data"`
-	Included *[]OneOfBuildApp `json:"included,omitempty"`
-	Links PagedDocumentLinks `json:"links"`
-	Meta *PagingInformation `json:"meta,omitempty"`
+	Data                 []PrereleaseVersion `json:"data"`
+	Included             *[]OneOfBuildApp    `json:"included,omitempty"`
+	Links                PagedDocumentLinks  `json:"links"`
+	Meta                 *PagingInformation  `json:"meta,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
 type _PreReleaseVersionsResponse PreReleaseVersionsResponse
+type OneOfBuildApp struct{}
 
 // NewPreReleaseVersionsResponse instantiates a new PreReleaseVersionsResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPreReleaseVersionsResponse(data []PrereleaseVersion, links PagedDocumentLinks, ) *PreReleaseVersionsResponse {
+func NewPreReleaseVersionsResponse(data []PrereleaseVersion, links PagedDocumentLinks) *PreReleaseVersionsResponse {
 	this := PreReleaseVersionsResponse{}
 	this.Data = data
 	this.Links = links
@@ -46,7 +47,7 @@ func NewPreReleaseVersionsResponseWithDefaults() *PreReleaseVersionsResponse {
 
 // GetData returns the Data field value
 func (o *PreReleaseVersionsResponse) GetData() []PrereleaseVersion {
-	if o == nil  {
+	if o == nil {
 		var ret []PrereleaseVersion
 		return ret
 	}
@@ -57,7 +58,7 @@ func (o *PreReleaseVersionsResponse) GetData() []PrereleaseVersion {
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
 func (o *PreReleaseVersionsResponse) GetDataOk() (*[]PrereleaseVersion, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Data, true
@@ -102,7 +103,7 @@ func (o *PreReleaseVersionsResponse) SetIncluded(v []OneOfBuildApp) {
 
 // GetLinks returns the Links field value
 func (o *PreReleaseVersionsResponse) GetLinks() PagedDocumentLinks {
-	if o == nil  {
+	if o == nil {
 		var ret PagedDocumentLinks
 		return ret
 	}
@@ -113,7 +114,7 @@ func (o *PreReleaseVersionsResponse) GetLinks() PagedDocumentLinks {
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
 func (o *PreReleaseVersionsResponse) GetLinksOk() (*PagedDocumentLinks, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Links, true
@@ -233,5 +234,3 @@ func (v *NullablePreReleaseVersionsResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

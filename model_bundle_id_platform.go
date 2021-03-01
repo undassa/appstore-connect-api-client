@@ -18,12 +18,6 @@ import (
 // BundleIdPlatform the model 'BundleIdPlatform'
 type BundleIdPlatform string
 
-// List of BundleIdPlatform
-const (
-	IOS BundleIdPlatform = "IOS"
-	MAC_OS BundleIdPlatform = "MAC_OS"
-)
-
 func (v *BundleIdPlatform) UnmarshalJSON(src []byte) error {
 	var value string
 	err := json.Unmarshal(src, &value)
@@ -31,7 +25,7 @@ func (v *BundleIdPlatform) UnmarshalJSON(src []byte) error {
 		return err
 	}
 	enumTypeValue := BundleIdPlatform(value)
-	for _, existing := range []BundleIdPlatform{ "IOS", "MAC_OS",   } {
+	for _, existing := range []BundleIdPlatform{"IOS", "MAC_OS"} {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
@@ -81,4 +75,3 @@ func (v *NullableBundleIdPlatform) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
